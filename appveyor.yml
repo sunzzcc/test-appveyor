@@ -4,9 +4,17 @@ image: Visual Studio 2017
 clone_folder: C:\prj\test-appveyor
 build_script:
 - cmd: >-
-    cd C:\Python36-x64
+    virtualenv venv
 
-    dir
+    venv\Scripts\activate
+
+    python -m pip install pip<19.0
+
+    pip install -r requirements.txt
+
+    pip install pyinstaller
+
+    pyinstaller process_avtx.py
 
 artifacts:
 - path: dist\process_avtx.zip
