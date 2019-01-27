@@ -5,7 +5,9 @@ clone_folder: C:\prj\test-appveyor
 build_script:
 - cmd: >-
     cd C:\Python36-x64
+
     dir
+
 artifacts:
 - path: dist\process_avtx.zip
 
