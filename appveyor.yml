@@ -12,15 +12,17 @@ build_script:
 
     python -m pip install "pip<19.0"
 
-    pip install -r requirements.txt
+    pip list
 
-    pip install pyinstaller
+    rem pip install -r requirements.txt
 
-    "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
+    rem pip install pyinstaller
 
-    cl.exe /D_USRDLL /D_WINDLL deca/process_image.c /link /DLL /OUT:process_image.dll
+    rem "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
 
-    pyinstaller process_avtx.py
+    rem cl.exe /D_USRDLL /D_WINDLL deca/process_image.c /link /DLL /OUT:process_image.dll
+
+    rem pyinstaller process_avtx.py
 
 artifacts:
 - path: dist\process_avtx.zip
