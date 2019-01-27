@@ -6,6 +6,8 @@ build_script:
 - cmd: >-
     cd C:\prj\test-appveyor
 
+    c:\Python36-x64\python -m pip list
+    
     c:\Python36-x64\python -m virtualenv venv
 
     venv\Scripts\activate
