@@ -4,6 +4,10 @@ image: Visual Studio 2017
 clone_folder: C:\prj\test-appveyor
 build_script:
 - cmd: >-
+    SET
+
+    SET PATH=C:\Python36-x64\;%path%
+
     cd C:\prj\test-appveyor
 
     c:\Python36-x64\python --version
