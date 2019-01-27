@@ -1,0 +1,9 @@
+version: 0.0.{build}
+max_jobs: 1
+image: Visual Studio 2017
+clone_folder: C:\prj\test-appveyor
+build:
+  verbosity: minimal
+artifacts:
+- path: dist\process_avtx.zip
+
