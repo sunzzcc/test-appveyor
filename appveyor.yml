@@ -35,7 +35,8 @@ build_script:
     pyinstaller process_avtx.py
 
 after_build:
-    7z a process_avtx-%APPVEYOR_BUILD_NUMBER%.zip dist\process_avtx\*
+    cd dist\process_avtx
+    7z a ..\..\process_avtx-%APPVEYOR_BUILD_NUMBER%.zip *
 
 artifacts:
 - path: process_avtx-%APPVEYOR_BUILD_NUMBER%.zip
