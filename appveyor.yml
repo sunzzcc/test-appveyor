@@ -8,12 +8,12 @@ build_script:
 
     SET PATH=C:\Python36-x64;C:\Python36-x64\Scripts;%path%
 
-    cd C:\prj\test-appveyor
+    cd C:\prj
 
     c:\Python36-x64\python --version
 
     c:\Python36-x64\python -m pip list
-    
+
     c:\Python36-x64\python -m virtualenv venv
 
     venv\Scripts\activate
@@ -22,9 +22,11 @@ build_script:
 
     pip list
 
-    pip install -r requirements.txt
+    pip install -r test-appveyor/requirements.txt
 
     pip install pyinstaller
+
+    cd C:\prj\test-appveyor
 
     "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
 
@@ -33,7 +35,7 @@ build_script:
     pyinstaller process_avtx.py
 
 after_build:
-    7z a process_avtx-%APPVEYOR_BUILD_NUMBER%.zip dist\process_adf\*
+    7z a process_avtx-%APPVEYOR_BUILD_NUMBER%.zip dist\process_avtx\*
 
 artifacts:
 - path: process_avtx-%APPVEYOR_BUILD_NUMBER%.zip
