@@ -1,4 +1,4 @@
-version: 0.0.{build}
+version: build-{build}
 max_jobs: 1
 image: Visual Studio 2017
 clone_folder: C:\prj\test-appveyor
