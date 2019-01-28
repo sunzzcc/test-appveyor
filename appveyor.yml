@@ -32,16 +32,19 @@ build_script:
 
     pyinstaller process_avtx.py
 
+after_build:
+    7z a process_avtx-%APPVEYOR_BUILD_NUMBER%.zip dist\process_adf\*
+
 artifacts:
-- path: dist\process_avtx
+- path: process_avtx-%APPVEYOR_BUILD_NUMBER%.zip
 
 deploy:
-  artifact: dist\process_avtx
+  artifact: process_avtx-%APPVEYOR_BUILD_NUMBER%.zip
   prerelease: true
   description: 'Test Release'
   provider: GitHub
   auth_token:
     secure: gb7NBwSinsyPgvJSkCDgUNjxAzqCqRbPEN3b0oX1XF92PAxuy2Opyk+Rbvw660R3
   on:
-    branch: master                 # release from master branch only
+    # branch: master                 # release from master branch only
     APPVEYOR_REPO_TAG: true        # deploy on tag push only
