@@ -36,6 +36,7 @@ build_script:
 
 after_build:
     cd dist\process_avtx
+
     7z a ..\..\process_avtx-%APPVEYOR_BUILD_NUMBER%.zip *
 
 artifacts:
