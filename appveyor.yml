@@ -6,7 +6,7 @@ build_script:
 - cmd: >-
     SET
 
-    SET PATH=C:\Python36-x64\;%path%
+    SET PATH=C:\Python36-x64;C:\Python36-x64\Scripts;%path%
 
     cd C:\prj\test-appveyor
 
@@ -35,3 +35,13 @@ build_script:
 artifacts:
 - path: dist\process_avtx
 
+deploy:
+  artifact: dist\process_avtx
+  prerelease: true
+  description: 'Test Release'
+  provider: GitHub
+  auth_token:
+    secure: gb7NBwSinsyPgvJSkCDgUNjxAzqCqRbPEN3b0oX1XF92PAxuy2Opyk+Rbvw660R3
+  on:
+    branch: master                 # release from master branch only
+    APPVEYOR_REPO_TAG: true        # deploy on tag push only
