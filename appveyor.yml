@@ -37,13 +37,13 @@ build_script:
 after_build:
     cd dist\process_avtx
 
-    7z a ..\..\process_avtx-%APPVEYOR_BUILD_NUMBER%.zip *
+    7z a ..\..\process_avtx-b%APPVEYOR_BUILD_NUMBER%.zip *
 
 artifacts:
-- path: process_avtx-%APPVEYOR_BUILD_NUMBER%.zip
+- path: process_avtx-b%APPVEYOR_BUILD_NUMBER%.zip
 
 deploy:
-  artifact: process_avtx-%APPVEYOR_BUILD_NUMBER%.zip
+  artifact: process_avtx-b%APPVEYOR_BUILD_NUMBER%.zip
   prerelease: true
   description: 'Test Release'
   provider: GitHub
