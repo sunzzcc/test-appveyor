@@ -36,11 +36,14 @@ build_script:
 
     chdir
 
-    python setup.py build_ext --inplace
+    cl.exe /D_USRDLL /D_WINDLL deca/process_image.c /link /DLL /OUT:process_image.dll
+
+    pyinstaller process_avtx.py
 
     dir
 
-#xcopy ./*.pxd ../../ /S
+#python setup.py build_ext --inplace
+#xcopy ./*.pyd ../../ /S
 
 after_build:
     chdir
@@ -55,6 +58,7 @@ after_build:
     7z a ..\..\process_avtx-b%APPVEYOR_BUILD_NUMBER%.zip *
 
     dir
+    chdir
 
 artifacts:
 - path: process_avtx-b%APPVEYOR_BUILD_NUMBER%.zip
