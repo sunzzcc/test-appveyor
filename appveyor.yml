@@ -36,44 +36,24 @@ build_script:
 
     md ..\compile_pyd
 
-    echo .compile_pyd>exclude.txt
-
-    type exclude.txt
-
-    chdir
-
-    dir
-
     xcopy .\*.pyd ..\compile_pyd /s /y
-
-    dir
 
 #xcopy .\*.pyd compile_pyd /exclude:exclude.txt /s
 
 after_build:
-    chdir
-
-    dir
-
     cd ..\compile_pyd
 
-    dir
-
-    chdir
-
-    7z a ..\compile_pyd-b%APPVEYOR_BUILD_NUMBER%.zip *
-
-    move ..\compile_pyd-b%APPVEYOR_BUILD_NUMBER%.zip .\
+    7z a .\compile_pyd-b%APPVEYOR_BUILD_NUMBER%.zip ..\compile_pyd\*
 
     dir
 
     chdir
 
 artifacts:
-- path: \compile_pyd-b%APPVEYOR_BUILD_NUMBER%.zip
+- path: compile_pyd-b%APPVEYOR_BUILD_NUMBER%.zip
 
 deploy:
-  artifact: \compile_pyd-b%APPVEYOR_BUILD_NUMBER%.zip
+  artifact: compile_pyd-b%APPVEYOR_BUILD_NUMBER%.zip
   prerelease: true
   description: 'Test Release'
   provider: GitHub
