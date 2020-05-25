@@ -51,7 +51,7 @@ after_build:
     dir
 
     cd dist\process_avtx
-  
+
     dir
 
     chdir
@@ -59,6 +59,7 @@ after_build:
     7z a ..\..\process_avtx-b%APPVEYOR_BUILD_NUMBER%.zip *
 
     dir
+  
     chdir
 
 artifacts:
