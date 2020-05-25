@@ -34,7 +34,7 @@ build_script:
 
     python setup.py build_ext --inplace
 
-    md compile_pyd
+    md ..\compile_pyd
 
     echo .compile_pyd>exclude.txt
 
@@ -44,17 +44,18 @@ build_script:
 
     dir
 
-    xcopy .\*.pyd compile_pyd /exclude:exclude.txt /s
+    xcopy .\*.pyd ..\compile_pyd /s /y
 
     dir
 
+#xcopy .\*.pyd compile_pyd /exclude:exclude.txt /s
 
 after_build:
     chdir
 
     dir
 
-    cd compile_pyd
+    cd ..\compile_pyd
 
     dir
 
