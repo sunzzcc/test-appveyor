@@ -38,6 +38,12 @@ build_script:
 
     echo .compile_pyd>exclude.txt
 
+    type exclude.txt
+
+    chdir
+
+    dir
+
     xcopy .\*.pyd compile_pyd /exclude:exclude.txt /s
 
     dir
