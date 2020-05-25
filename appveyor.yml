@@ -41,8 +41,6 @@ build_script:
 #xcopy .\*.pyd compile_pyd /exclude:exclude.txt /s
 
 after_build:
-    cd ..\compile_pyd
-
     7z a .\compile_pyd-b%APPVEYOR_BUILD_NUMBER%.zip ..\compile_pyd\*
 
     dir
