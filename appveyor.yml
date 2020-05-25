@@ -26,18 +26,35 @@ build_script:
 
     pip install pyinstaller
 
+    pip install cython
+
+    pip install numpy
+
     cd C:\prj\test-appveyor
 
     "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
 
-    cl.exe /D_USRDLL /D_WINDLL deca/process_image.c /link /DLL /OUT:process_image.dll
+    chdir
 
-    pyinstaller process_avtx.py
+    python setup.py build_ext --inplace
+
+    dir
+
+#xcopy ./*.pxd ../../ /S
 
 after_build:
+    chdir
+
+    dir
+
     cd dist\process_avtx
+    dir
+
+    chdir
 
     7z a ..\..\process_avtx-b%APPVEYOR_BUILD_NUMBER%.zip *
+
+    dir
 
 artifacts:
 - path: process_avtx-b%APPVEYOR_BUILD_NUMBER%.zip
