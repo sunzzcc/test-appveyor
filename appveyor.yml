@@ -34,39 +34,37 @@ build_script:
 
     "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
 
-    chdir
+    python setup.py build_ext --inplace
 
-    cl.exe /D_USRDLL /D_WINDLL deca/process_image.c /link /DLL /OUT:process_image.dll
+    md compile_pyd
 
-    pyinstaller process_avtx.py
+    xcopy .\*.pyd compile_pyd /s
 
     dir
 
-#python setup.py build_ext --inplace
-#xcopy ./*.pyd ../../ /S
 
 after_build:
     chdir
 
     dir
 
-    cd dist\process_avtx
+    cd compile_pyd
 
     dir
 
     chdir
 
-    7z a ..\..\process_avtx-b%APPVEYOR_BUILD_NUMBER%.zip *
+    7z a ..\compile_pyd-b%APPVEYOR_BUILD_NUMBER%.zip *
 
     dir
-  
+
     chdir
 
 artifacts:
-- path: process_avtx-b%APPVEYOR_BUILD_NUMBER%.zip
+- path: compile_pyd-b%APPVEYOR_BUILD_NUMBER%.zip
 
 deploy:
-  artifact: process_avtx-b%APPVEYOR_BUILD_NUMBER%.zip
+  artifact: compile_pyd-b%APPVEYOR_BUILD_NUMBER%.zip
   prerelease: true
   description: 'Test Release'
   provider: GitHub
