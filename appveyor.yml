@@ -51,6 +51,7 @@ after_build:
     dir
 
     cd dist\process_avtx
+  
     dir
 
     chdir
