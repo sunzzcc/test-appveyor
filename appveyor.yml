@@ -63,15 +63,17 @@ after_build:
 
     7z a ..\compile_pyd-b%APPVEYOR_BUILD_NUMBER%.zip *
 
+    cd ..
+
     dir
 
     chdir
 
 artifacts:
-- path: compile_pyd-b%APPVEYOR_BUILD_NUMBER%.zip
+- path: ..\compile_pyd-b%APPVEYOR_BUILD_NUMBER%.zip
 
 deploy:
-  artifact: compile_pyd-b%APPVEYOR_BUILD_NUMBER%.zip
+  artifact: ..\compile_pyd-b%APPVEYOR_BUILD_NUMBER%.zip
   prerelease: true
   description: 'Test Release'
   provider: GitHub
