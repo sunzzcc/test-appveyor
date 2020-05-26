@@ -1,4 +1,5 @@
 $workspace=$clone_folder
+Set-PSDebug -Trace 1
 
 # $pyvers = @("36", "36-x64", "36", "36-x64", "37", "37-x64", "37", "37-x64", "37", "37-x64", "38", "38-x64", "38", "38-x64")
 $pyvers = @("36")
@@ -23,7 +24,6 @@ foreach ($ver in $pyvers)
 
     & $python setup.py build_ext --inplace
     pwd
-    ls .\evaluator\backend\cpp\
     md ..\compiled_pyd
     xcopy .\*.pyd ..\compiled_pyd /s /y
 }
