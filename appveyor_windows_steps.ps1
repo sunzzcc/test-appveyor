@@ -21,7 +21,7 @@ foreach ($ver in $pyvers)
 
     "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars${vc}.bat"
 
-    $python setup.py build_ext --inplace
+    & $python setup.py build_ext --inplace
     pwd
     ls .\evaluator\backend\cpp\
     md ..\compiled_pyd
