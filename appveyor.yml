@@ -20,6 +20,6 @@ deploy:
   provider: GitHub
   auth_token:
     secure: gb7NBwSinsyPgvJSkCDgUNjxAzqCqRbPEN3b0oX1XF92PAxuy2Opyk+Rbvw660R3
-  on:
-    # branch: master                 # release from master branch only
+#  on:
+#     branch: master                 # release from master branch only
 #    APPVEYOR_REPO_TAG: true        # deploy on tag push only
