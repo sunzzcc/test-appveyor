@@ -27,5 +27,5 @@ foreach ($ver in $pyvers)
     xcopy .\*.pyd ..\compiled_pyd /s /y
 }
 
-7z a .\compiled_pyd-b%APPVEYOR_BUILD_NUMBER%.zip ..\compiled_pyd\*
+7z a .\compiled_pyd-b${APPVEYOR_BUILD_NUMBER}.zip ..\compiled_pyd\*
 ls
