@@ -22,8 +22,8 @@ deploy:
   prerelease: true
   description: 'Test Release'
   provider: GitHub
-#  auth_token: 358520c8aa573ded4e37b31073493828bdc4d5ba
-#    secure:
+  auth_token:
+    secure: EtPzN/tNyp4noOA6WEC9WmAXJT3sWa7/E9Ba0Wv4Fvu+2KSsaOX3VDtgMyYkJjI9
 #  on:
 #     branch: master                 # release from master branch only
 #    APPVEYOR_REPO_TAG: true        # deploy on tag push only
