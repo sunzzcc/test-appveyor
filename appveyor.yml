@@ -5,6 +5,7 @@ clone_folder: C:\prj\test-appveyor
 
 build_script:
 - ps: cd C:\prj\test-appveyor
+- ps: ls c:\Python36\
 - ps: .\appveyor_windows_steps.ps1
 
 #after_build:
