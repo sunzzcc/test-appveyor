@@ -1,5 +1,5 @@
-$workspace=$clone_folder
-Set-PSDebug -Trace 1
+# $workspace=$clone_folder
+# Set-PSDebug -Trace 1
 
 $pyvers = @("36", "36-x64", "36", "36-x64", "37", "37-x64", "37", "37-x64", "37", "37-x64", "38", "38-x64", "38", "38-x64")
 
@@ -18,7 +18,7 @@ foreach ($ver in $pyvers)
         $vc="32"
     }
 
-    "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars${vc}.bat"
+    "C:\Program Files (x86)\Microsoft Visual Studio\2015\Community\VC\Auxiliary\Build\vcvars${vc}.bat"
 
     & $python setup.py build_ext --inplace
     pwd
