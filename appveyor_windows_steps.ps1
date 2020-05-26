@@ -7,7 +7,6 @@ $pyvers = @("36")
 foreach ($ver in $pyvers)
 {
     $python = "c:\Python${ver}\python"
-    ls c:\Python${ver}
     & $python -m pip install cython
     & $python -m pip install numpy
 
@@ -29,4 +28,4 @@ foreach ($ver in $pyvers)
 }
 
 7z a .\compiled_pyd-b%APPVEYOR_BUILD_NUMBER%.zip ..\compiled_pyd\*
-
+ls
