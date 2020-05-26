@@ -2,9 +2,7 @@ version: build-{build}
 max_jobs: 1
 image: Visual Studio 2017
 clone_folder: C:\prj\test-appveyor
-platform:
-    - x86
-#    - x64
+
 build_script:
 - cmd: >-
     SET
@@ -33,7 +31,7 @@ build_script:
 
     cd C:\prj\test-appveyor
 
-    "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
+    "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars32.bat"
 
     python setup.py build_ext --inplace
 
