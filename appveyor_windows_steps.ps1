@@ -26,6 +26,3 @@ foreach ($ver in $pyvers)
     md ..\compiled_pyd
     xcopy .\*.pyd ..\compiled_pyd /s /y
 }
-
-7z a .\compiled_pyd-b${APPVEYOR_BUILD_NUMBER}.zip ..\compiled_pyd\*
-ls
