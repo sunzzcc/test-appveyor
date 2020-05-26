@@ -7,7 +7,7 @@ foreach ($ver in $pyvers)
 {
     $python = "c:\Python${ver}\python"
     & $python -m pip install cython
-    & $python -m pip install numpy mkl
+    & $python -m pip install numpy==1.18.1
 
     if ($python.contains("-x64"))
     {
