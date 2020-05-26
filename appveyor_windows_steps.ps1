@@ -1,10 +1,11 @@
 $workspace=$clone_folder
 
 $pyvers = @("36", "36-x64", "36", "36-x64", "37", "37-x64", "37", "37-x64", "37", "37-x64", "38", "38-x64", "38", "38-x64")
+# $pyvers = @("36")
 
 foreach ($ver in $pyvers)
 {
-    $python = "c:\Python${ver}\python"
+    $python = c:\Python${ver}\python
     $python -m pip install cython
     $python -m pip install numpy
 
