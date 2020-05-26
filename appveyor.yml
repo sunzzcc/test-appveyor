@@ -23,7 +23,7 @@ deploy:
   description: 'Test Release'
   provider: GitHub
   auth_token:
-    secure: EtPzN/tNyp4noOA6WEC9WmAXJT3sWa7/E9Ba0Wv4Fvu+2KSsaOX3VDtgMyYkJjI9
+    secure: R76IPCPF7d6S2KfQC7/9TiRuUwo5hafTLuToFhXPdznjFhJ6yQZgvpagMH++xsj0
 #  on:
 #     branch: master                 # release from master branch only
 #    APPVEYOR_REPO_TAG: true        # deploy on tag push only
